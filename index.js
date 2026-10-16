@@ -1,6 +1,6 @@
 // set timeout
 
-function satuDetik() {
+function satuDetik(cb) {
     setTimeout(function(){
         console.log(1)
         setTimeout(function(){
@@ -11,9 +11,7 @@ function satuDetik() {
                     console.log(4)
                     setTimeout(function(){
                         console.log(5)
-                        setTimeout(function(){
-                            console.log("Program Berakhir!")
-                        }, 1000)
+                        cb()
                     }, 1000)
                 }, 1000)
             }, 1000)
@@ -21,4 +19,8 @@ function satuDetik() {
     }, 1000)
 }
 
-satuDetik()
+function selesai(){
+    console.log("Program Selesai!")
+}
+
+satuDetik(selesai)
